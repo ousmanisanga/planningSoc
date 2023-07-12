@@ -1,0 +1,40 @@
+/* Utiliser une couleur plus attrayante pour le fond */
+body {
+    background-color: #f9f9f9;
+  }
+
+  /* Améliorer le style de la carte et des éléments internes */
+ .col-6 .row .card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  /* Améliorer le style du bouton */
+  .col-6 .row .card .btn {
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+
+  .col-6 .row .card .btn:hover {
+    background-color: #5a98de;
+  }
+
+  /* Modifier la police du texte principal */
+  .col-6 .row .card .card-body .card-title,
+  .col-6 .row .card .card-body .card-text {
+    font-family: 'Lora', serif;
+  }
+
+  /* Appliquer une animation de transition au survol de la carte */
+  .col-6 .row .card:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 8px 20px -5px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Rendre la carte réactive sur les appareils mobiles */
+  @media (max-width: 576px) {
+    .col-6 .row .card {
+      width: 100%;
+    }
+  }

@@ -1,0 +1,52 @@
+<!-- Modal -->
+    <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #fba407">
+                <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: #fff">Declaration d'incidents</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="color: #fff"></button>
+                </div>
+                <form action="{{ route('incidents.store') }}" method="POST" >
+                    @csrf
+                    <div class="modal-body">
+                        <div class="form-row mx-n15">
+                            <div class="col-md-9 mb-20 px-15">
+                                <label for="nomIncident" class="il-gray fs-14 fw-500 align-center">Nom de l'incident *</label>
+                                <input type="text" class="form-control ih-medium ip-light radius-xs b-light" id="nomIncident" placeholder="Le nom de l'incident" name="nomIncident" required>
+                            </div>
+                        </div>
+                        <div class="form-row mx-n15">
+                            <div class="col-md-9 mb-20 px-15">
+                                <label for="dateIncident" class="il-gray fs-14 fw-500 align-center">Date de l'incident *</label>
+                                <input type="date" class="form-control  ih-medium ip-light radius-xs b-light" id="dateIncident" name="dateIncident" placeholder="" required>
+                            </div>
+                        </div>
+                        <div class="form-row mx-n15">
+                            <div class="col-md-6 mb-20 px-15">
+                                <label for="heureIncident" class="il-gray fs-14 fw-500 align-center">Heure de l'incident *</label>
+                                <input type="time" class="form-control  ih-medium ip-light radius-xs b-light" id="heureIncident" name="heureIncident" placeholder="" required>
+                            </div>
+                            <div class="col-md-6 mb-20 px-15" >
+                                <label for="heureRetourNormal" class="il-gray fs-14 fw-500 align-center ">Heure de retour au normal</label>
+                                <input type="time" class="form-control  ih-medium ip-light radius-xs b-light" id="heureRetourNormal" name="heureRetourNormal" placeholder="00:00" required>
+                            </div>
+                        </div>
+                        <div class="form-row mx-n15">
+                            <div class="col-md-9 mb-20 px-15">
+                                <label for="observation" class="il-gray fs-14 fw-500 align-center">Observation *</label>
+                                <textarea class="form-control  ih-medium ip-light radius-xs b-light" name="observation" id="observation" cols="30" rows="10" placeholder="observation..." required></textarea>
+                            </div>
+                        </div>
+                        <div class="form-row mx-n15" {{--style="visibility: hidden"  --}} >
+                            <input type="text" id="user_id" name="user_id" value="{{ auth()->user()->id }}" hidden>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                        <button type="submit" class="btn btn-primary">Declarer</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
